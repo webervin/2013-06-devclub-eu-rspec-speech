@@ -10,4 +10,13 @@ class Person
   def young?
     @age < AGE_BORDER
   end
+
+  # simple property!
+  def mood
+    if young?
+      :happy
+    else
+      :average
+    end
+  end
 end
