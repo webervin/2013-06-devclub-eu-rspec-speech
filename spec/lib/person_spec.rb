@@ -2,13 +2,17 @@ require 'spec_helper'
 require 'person'
 
 describe 'Person' do
-  it 'with age 26 should be young' do
-    person = Person.new 26
-    assert person.young?
+  context 'with age 26' do
+    it 'should be young' do
+      person = Person.new 26
+      assert person.young?
+    end
   end
 
-  it 'with age 27 should not be young' do
-    person = Person.new 27
-    assert !person.young?
+  context 'with age 27' do
+    it 'should not be young' do
+      person = Person.new 27
+      assert !person.young?
+    end
   end
 end
