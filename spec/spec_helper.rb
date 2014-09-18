@@ -17,5 +17,5 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = 'random'
   config.mock_with :nothing
-  config.expect_with :stdlib
+  config.expect_with :rspec
 end
