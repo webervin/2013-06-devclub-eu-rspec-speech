@@ -8,7 +8,8 @@ shared_examples_for :getting_mature do
     context "with age #{age}", age: age do
 
       it 'should be young' do
-        assert subject.young?
+        # assert subject.young?
+        (subject.young?).should be_true
       end
     end
   end
@@ -16,7 +17,8 @@ shared_examples_for :getting_mature do
   (self.metadata[:maturity_age]..self.metadata[:end_of_ages]).each do |age|
     context "with age #{age}", age: age do
       it 'should not be young' do
-        assert !subject.young?
+        # assert !subject.young?
+        (subject.young?).should_not be_true
       end
     end
   end
