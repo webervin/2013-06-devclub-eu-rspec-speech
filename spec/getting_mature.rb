@@ -4,7 +4,8 @@ require 'spec_helper'
 shared_examples_for :getting_mature do
   subject { described_class.new example.metadata[:age] }
 
-  (0...self.metadata[:maturity_age]).each do |age|
+  maturity_age = self.metadata[:maturity_age]
+  (0...maturity_age).each do |age|
     context "with age #{age}", age: age do
 
       # it 'should be young' do
@@ -12,7 +13,8 @@ shared_examples_for :getting_mature do
     end
   end
 
-  (self.metadata[:maturity_age]..self.metadata[:end_of_ages]).each do |age|
+  end_of_ages = self.metadata[:end_of_ages]
+  (maturity_age..end_of_ages).each do |age|
     context "with age #{age}", age: age do
       # it 'should not be young' do
       it { should_not be_young }
